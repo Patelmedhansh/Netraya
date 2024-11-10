@@ -4,13 +4,19 @@
 // import Services from './components/Services';
 // import Articles from './components/Articles';
 // import Footer from './components/Footer';
-import RegistrationForm from './components/User/RegistrationForm';
+// import RegistrationForm from './components/User/RegistrationForm';
+// import SignUpForm from "./components/User/SignUpForm";
+import SignInForm from "./components/User/SignInForm";
+
+
 
 function App() {
   return (
     <div className="App">
       {
-        <RegistrationForm />
+        // <RegistrationForm />
+        // <SignUpForm />
+      <SignInForm />
       }
       {/* <Header />
       <Hero />
