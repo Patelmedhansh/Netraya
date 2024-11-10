@@ -104,3 +104,7 @@ Header.css:
   background-color: #333;
   transform: scale(1.05);
 }
+
+
+import logo from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/logo.png';
+import sideImage from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/sideImage.png';
