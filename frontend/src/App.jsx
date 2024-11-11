@@ -6,7 +6,8 @@
 // import Footer from './components/Footer';
 // import RegistrationForm from './components/User/RegistrationForm';
 // import SignUpForm from "./components/User/SignUpForm";
-import SignInForm from "./components/User/SignInForm";
+import ServicesPage from "./components/model/ServicesPage";
+//import SignInForm from "./components/User/SignInForm";
 
 
 
@@ -16,7 +17,8 @@ function App() {
       {
         // <RegistrationForm />
         // <SignUpForm />
-      <SignInForm />
+      //<SignInForm />
+      <ServicesPage />
       }
       {/* <Header />
       <Hero />
