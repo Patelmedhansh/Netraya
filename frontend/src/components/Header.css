@@ -50,6 +50,7 @@ nav {
   border: none;
   border-radius: 30px; /* Rounded button */
   padding: 0.5rem 1.2rem;
+  margin-left: 5px;
   color: #fff;
   cursor: pointer;
   font-size: 0.9rem;

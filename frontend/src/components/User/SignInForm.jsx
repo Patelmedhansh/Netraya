@@ -1,9 +1,46 @@
 import './SignInForm.css';
 import { FaEnvelope, FaKey } from 'react-icons/fa';
-import doctorImage2 from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/doctorImage2.png'; 
-import logo from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/logo.png';
+import doctorImage2 from "../../assets/doctorImage2.png"; 
+import logo from '../../assets/logo.png';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SignInForm = () => {
+const SignInForm = ({ setIsLoggedIn }) => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert(data.message); // Show success message
+        localStorage.setItem('token', data.token); // Store token in local storage
+        setIsLoggedIn(true); // Set login state to true
+        navigate('/'); // Redirect to landing page
+      } else {
+        alert(data.message); // Show error message
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
     <div className="signin-container">
       <div className="logo-container">
@@ -11,18 +48,30 @@ const SignInForm = () => {
       </div>
       <div className="form-section">
         <h1>Sign In</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
             <FaEnvelope className="input-icon" />
-            <input type="email" placeholder="Email address" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </div>
           <div className="input-group">
             <FaKey className="input-icon" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+            />
           </div>
           <button type="submit" className="submit-button">Sign In</button>
         </form>
-        <p className="signup-link"> Don&apos;t have an account? <a href="/signup">Create</a></p>
+        <p className="signup-link"> Don't have an account? <a href="/signup">Create</a></p>
       </div>
       <div className="image-section">
         <img src={doctorImage2} alt="Doctor" className="doctor-image" />

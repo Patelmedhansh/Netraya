@@ -1,7 +1,7 @@
 .services {
   padding: 3rem 2rem;
   background-color: rgba(19, 22, 25, 1);
-  color: #fff; /* White text */
+  color: #fff;
   text-align: center;
 }
 
@@ -9,27 +9,33 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  font-family: 'Poppins', sans-serif; /* Consistent font */
+  font-family: 'Poppins', sans-serif;
 }
 
 .service-cards {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.service-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .service-card {
   background-color: rgba(19, 22, 25, 1);
   border-radius: 10px;
   padding: 2rem;
-  flex: 1;
   min-width: 280px;
   max-width: 400px;
   color: #fff;
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  margin-bottom: 1rem; /* Space below the card */
 }
 
 .service-card:hover {
@@ -37,16 +43,16 @@
 }
 
 .service-icon {
-  width: 40px; /* Adjust size as needed */
+  width: 40px;
   height: 40px;
-  margin-bottom: 1rem; /* Space below the icon */
+  margin-bottom: 1rem;
 }
 
 .service-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+  font-family: 'Poppins', sans-serif;
 }
 
 .service-card p {
@@ -54,18 +60,19 @@
   line-height: 1.5;
   margin-bottom: 1.5rem;
   font-family: 'Poppins', sans-serif;
-  color: #ccc; /* Slightly lighter text for readability */
+  color: #ccc;
 }
 
 .service-actions {
   display: flex;
   gap: 1rem;
   align-items: center;
+  padding-left: 2rem; /* Align with card padding */
 }
 
 .service-btn {
   background-color: transparent;
-  border: 2px solid #fff; /* White border */
+  border: 2px solid #fff;
   border-radius: 20px;
   padding: 0.5rem 1.5rem;
   color: #fff;
@@ -75,7 +82,7 @@
 }
 
 .service-btn:hover {
-  background-color: #333; /* Slightly lighter on hover */
+  background-color: #333;
 }
 
 .sign-up-link {
@@ -87,5 +94,5 @@
 }
 
 .sign-up-link:hover {
-  color: #aaa; /* Lighter color on hover */
+  color: #aaa;
 }
