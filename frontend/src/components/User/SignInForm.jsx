@@ -32,7 +32,13 @@ const SignInForm = ({ setIsLoggedIn }) => {
         alert(data.message); // Show success message
         localStorage.setItem('token', data.token); // Store token in local storage
         setIsLoggedIn(true); // Set login state to true
-        navigate('/'); // Redirect to landing page
+
+        // Check if the user is new and redirect accordingly
+        if (data.isNewUser) {
+          navigate('/registrationform'); // Redirect to RegistrationForm if user is new
+        } else {
+          navigate('/'); // Redirect to the landing page if user is not new
+        }
       } else {
         alert(data.message); // Show error message
       }

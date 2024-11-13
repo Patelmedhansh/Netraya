@@ -1,15 +1,3 @@
-<<<<<<< Updated upstream
-// import Header from './components/Header';
-// import Hero from './components/Hero';
-// import AboutUs from './components/AboutUs';
-// import Services from './components/Services';
-// import Articles from './components/Articles';
-// import Footer from './components/Footer';
-// import RegistrationForm from './components/User/RegistrationForm';
-// import SignUpForm from "./components/User/SignUpForm";
-import ServicesPage from "./components/model/ServicesPage";
-//import SignInForm from "./components/User/SignInForm";
-=======
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from './components/Header';
@@ -18,10 +6,10 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Articles from './components/Articles';
 import Footer from './components/Footer';
-import RegistrationForm from './components/User/RegistrationForm';
 import SignUpForm from "./components/User/SignUpForm";
 import SignInForm from "./components/User/SignInForm";
->>>>>>> Stashed changes
+import ServicesPage from "./components/model/ServicesPage";
+import RegistrationForm from "./components/User/RegistrationForm"; // Import RegistrationForm component
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,22 +21,6 @@ function App() {
   }, []);
 
   return (
-<<<<<<< Updated upstream
-    <div className="App">
-      {
-        // <RegistrationForm />
-        // <SignUpForm />
-      //<SignInForm />
-      <ServicesPage />
-      }
-      {/* <Header />
-      <Hero />
-      <AboutUs />
-      <Services />
-      <Articles />
-      <Footer /> */}
-    </div>
-=======
     <Router>
       <div className="App">
         <Routes>
@@ -70,11 +42,14 @@ function App() {
           {/* Route for Sign In page, passing setIsLoggedIn to update login state */}
           <Route path="/signin" element={<SignInForm setIsLoggedIn={setIsLoggedIn} />} />
 
-          {/* Additional routes as needed */}
+          {/* Route for ServicesPage */}
+          <Route path="/servicespage" element={<ServicesPage />} />
+
+          {/* Route for RegistrationForm, to complete profile for new users */}
+          <Route path="/registrationform" element={<RegistrationForm />} />
         </Routes>
       </div>
     </Router>
->>>>>>> Stashed changes
   );
 }
 

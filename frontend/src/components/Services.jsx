@@ -1,14 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Services.css';
 import serviceIcon from '/src/assets/serviceIcon.png';
 
 const Services = ({ isLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (e, path) => {
+    // Prevents the click event from triggering if it's from a button click
+    if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
+      if (!isLoggedIn) {
+        navigate("/signup");
+      } else {
+        navigate(path);
+      }
+    }
+  };
+
   return (
     <section id="services" className="services">
       <h2>Our Services</h2>
       <div className="service-cards">
-        <div className="service-card-wrapper"> {/* Wrapper for the left card and actions */}
+        {/* Left Card */}
+        <div
+          className="service-card-wrapper service-card-link"
+          onClick={(e) => handleCardClick(e, "/servicespage")}
+        >
           <div className="service-card">
             <img src={serviceIcon} alt="Service Icon" className="service-icon" />
             <h3>AI-Powered Research Analysis for Eye Care</h3>
@@ -21,11 +38,18 @@ const Services = ({ isLoggedIn }) => {
             )}
           </div>
         </div>
-        
-        <div className="service-card">
-          <img src={serviceIcon} alt="Service Icon" className="service-icon" />
-          <h3>Request a Demo to Experience Our Solutions</h3>
-          <p>See how our innovative tool can transform your practice.</p>
+
+        {/* Right Card */}
+        <div
+          className="service-card-wrapper service-card-link"
+          onClick={(e) => handleCardClick(e, "/servicespage")}
+        >
+          <div className="service-card">
+            <img src={serviceIcon} alt="Service Icon" className="service-icon" />
+            <h3>Request a Demo to Experience Our Solutions</h3>
+            <p>See how our innovative tool can transform your practice.</p>
+          </div>
+          
         </div>
       </div>
     </section>

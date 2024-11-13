@@ -1,10 +1,10 @@
 import './ServicesPage.css';
-import eyeImage from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/eyeImage.png';
-import exImage1 from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/exImage1.png';
-import exImage2 from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/exImage2.png';
-import exImage3 from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/exImage3.png';
-import exImage4 from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/exImage4.png';
-import exImage5 from 'C:/Users/DELL/Desktop/netraya/frontend/src/assets/exImage5.png';
+import eyeImage from '../../assets/exImage1.png';
+import exImage1 from '../../assets/exImage1.png';
+import exImage2 from '../../assets/exImage2.png';
+import exImage3 from '../../assets/exImage3.png';
+import exImage4 from '../../assets/exImage4.png';
+import exImage5 from '../../assets/exImage5.png';
 import { FaArrowUp, FaPlayCircle } from 'react-icons/fa';
 import { useState } from 'react';
 
