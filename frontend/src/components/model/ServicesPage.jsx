@@ -56,15 +56,19 @@ const ServicesPage = () => {
         </div>
 
         {showPreview && (
-          <div className="preview-section">
-            <h2>Preview of the Uploaded Image:</h2>
-            {uploadedImage ? (
-              <img src={uploadedImage} alt="Uploaded Preview" className="uploaded-image" />
-            ) : (
-              <p>No image uploaded yet.</p>
-            )}
-          </div>
-        )}
+  <div className="preview-section">
+    <h2>Preview of the Uploaded Image:</h2>
+    {uploadedImage ? (
+      <img src={uploadedImage} alt="Uploaded Preview" className="uploaded-image" />
+    ) : (
+      <p>No image uploaded yet.</p>
+    )}
+    <button className="run-model-button" onClick={() => alert('Model will be executed here.')}>
+      Run Model
+    </button>
+  </div>
+)}
+
       </div>
       <div className="image-section">
         <img src={eyeImage} alt="Eye" className="main-image" />
