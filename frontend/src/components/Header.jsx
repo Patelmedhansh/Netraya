@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
+import PopupForm from './PopupForm';
 
 const Header = ({ isLoggedIn, setIsLoggedIn }) => {
+  const [showContactForm, setShowContactForm] = useState(false);
+  
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Remove token from localStorage
-    setIsLoggedIn(false); // Update login state
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
   };
 
   return (
@@ -24,8 +27,14 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
         {isLoggedIn && (
           <button onClick={handleLogout} className="contact-btn">Logout</button>
         )}
-        <button className="contact-btn">Contact Us</button>
+        <button onClick={() => setShowContactForm(true)} className="contact-btn">Contact Us</button>
       </div>
+
+      <PopupForm 
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+        type="contact"
+      />
     </header>
   );
 };
