@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './Footer.css';
 import ContactForm from './ContactForm';
+import DemoRequestForm from './DemoRequestForm';
 
 const Footer = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   return (
     <footer className="footer">
@@ -13,7 +15,10 @@ const Footer = () => {
           <li><a href="#about" className="footer-link">About Us</a></li>
           <li><a href="#services" className="footer-link">Our Services</a></li>
           <li><a href="#articles" className="footer-link">Research Articles</a></li>
-          <li><a href="#request-demo" className="footer-link">Request Demo</a></li>
+          <li><a href="#" onClick={(e) => {
+            e.preventDefault();
+            setIsDemoOpen(true);
+          }} className="footer-link">Request Demo</a></li>
           <li><a href="#" onClick={(e) => {
             e.preventDefault();
             setIsContactOpen(true);
@@ -34,6 +39,11 @@ const Footer = () => {
       <ContactForm 
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
+      />
+      
+      <DemoRequestForm 
+        isOpen={isDemoOpen}
+        onClose={() => setIsDemoOpen(false)}
       />
     </footer>
   );
