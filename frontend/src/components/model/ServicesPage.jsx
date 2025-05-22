@@ -41,10 +41,6 @@ const ServicesPage = () => {
             onChange={handleImageUpload}
             style={{ display: 'none' }}
           />
-          <button className="demo-button">
-            <FaPlayCircle className="icon-play-circle" />
-            Watch the demo
-          </button>
         </div>
         <p>Or select from below given examples</p>
         <div className="examples-container">

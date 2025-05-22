@@ -7,7 +7,14 @@ const Hero = () => {
       <div className="hero-content">
         <h1>Revolutionizing Eye Health with AI-Powered Diagnostic</h1>
         <p>Unleash the power of deep learning technology to detect diabetic retinopathy and optimize ophthalmology research.</p>
-        <button className="learn-more-btn">Learn More</button>
+        <a 
+          href="https://www.perlego.com/book/1011064/handbook-of-retinal-screening-in-diabetes-diagnosis-and-management-pdf" 
+          className="learn-more-btn" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Learn More
+        </a>
       </div>
       <div className="hero-image">
         <img src={hero} alt="Eye health illustration" />

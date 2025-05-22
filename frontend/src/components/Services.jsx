@@ -32,7 +32,14 @@ const Services = ({ isLoggedIn }) => {
             <p>Utilize our AI model to analyze vast datasets, uncovering insights that drive better patient outcomes.</p>
           </div>
           <div className="service-actions">
-            <button className="service-btn">Learn More</button>
+            <a
+              href="https://www.perlego.com/book/1011064/handbook-of-retinal-screening-in-diabetes-diagnosis-and-management-pdf"
+              className="service-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn More
+            </a>
             {!isLoggedIn && (
               <Link to="/signup" className="sign-up-link">Sign Up &gt;</Link>
             )}
