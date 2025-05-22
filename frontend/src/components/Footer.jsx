@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './Footer.css';
+import ContactForm from './ContactForm';
 
 const Footer = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <footer className="footer">
       <div className="footer-left">
@@ -9,8 +13,11 @@ const Footer = () => {
           <li><a href="#about" className="footer-link">About Us</a></li>
           <li><a href="#services" className="footer-link">Our Services</a></li>
           <li><a href="#articles" className="footer-link">Research Articles</a></li>
-          <li><a href="#request-demo" className="footer-link">Request Demo</a></li> {/* Ensure the section exists or update this if not needed */}
-          <li><a href="#contact" className="footer-link">Contact Us</a></li>
+          <li><a href="#request-demo" className="footer-link">Request Demo</a></li>
+          <li><a href="#" onClick={(e) => {
+            e.preventDefault();
+            setIsContactOpen(true);
+          }} className="footer-link">Contact Us</a></li>
         </ul>
       </div>
       <div className="footer-right">
@@ -23,6 +30,11 @@ const Footer = () => {
           By subscribing you agree to provide consent to receive updates from our company.
         </small>
       </div>
+
+      <ContactForm 
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </footer>
   );
 };
